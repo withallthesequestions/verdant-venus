@@ -1,5 +1,5 @@
 ---
-
+import '../styles/global.css';
 ---
 
 <html lang='en'>
@@ -15,5 +15,30 @@
 		/>
 		<title>Document</title>
 	</head>
-	<body> Index page</body>
+	<body>
+		Index page
+		<p>
+			<label for='theme-select'>Pick your color scheme</label>
+			<select
+				name=''
+				id='theme-select'
+			>
+				<option
+					value='theme-system'
+					id='theme-system'
+					>System</option
+				>
+				<option
+					value='theme-light'
+					id='theme-light'
+					>Light</option
+				>
+				<option
+					value='theme-dark'
+					id='theme-dark'
+					>Dark</option
+				>
+			</select>
+		</p>
+	</body>
 </html>

@@ -1,0 +1,26 @@
+:root {
+    color-scheme: light dark;
+    --dark: #4E2E15;
+    --light: #FFEEDD;
+    --fg: light-dark(var(--dark), var(--light));
+    --bg: light-dark(var(--light), var(--dark));
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+    padding: 25px;
+    font-size: 25px;
+}
+
+:root:has(option[id='theme-system']:checked) {
+    color-scheme: light dark;
+}
+
+:root:has(option[id='theme-light']:checked) {
+    color-scheme: light;
+}
+
+:root:has(option[id='theme-dark']:checked) {
+    color-scheme: dark;
+}
