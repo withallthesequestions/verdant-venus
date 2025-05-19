@@ -13,14 +13,14 @@ body {
     font-size: 25px;
 }
 
-:root:has(option[id='theme-system']:checked) {
+:root:has(option[id='system']:checked) {
     color-scheme: light dark;
 }
 
-:root:has(option[id='theme-light']:checked) {
+:root:has(option[id='light']:checked) {
     color-scheme: light;
 }
 
-:root:has(option[id='theme-dark']:checked) {
+:root:has(option[id='dark']:checked) {
     color-scheme: dark;
 }
