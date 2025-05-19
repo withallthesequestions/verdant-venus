@@ -1,3 +1,6 @@
+# My personal ignored folders
+_Archive/
+
 # build output
 dist/
 
