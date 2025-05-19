@@ -1,4 +1,9 @@
-
+1. Keep Certain Chaos
+2. Update theme from TT > VV.
+3. Learn local storage, implement dark mode local storage variable in VV.
+	- Once I moved the script tag down to the end of the body tag, it helped.
+4. Explore more Astro features.
+5. Do more JS, after objects. 
 
 1. Filenames starting with underscore eg `_FileName.astro` are ignored by Astro.
 2. Backups placed in /_Archive
