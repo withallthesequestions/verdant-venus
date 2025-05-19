@@ -25,19 +25,19 @@ import '../styles/global.css';
 				onchange='setLocalStorageTheme()'
 			>
 				<option
-					value='system'
-					id='system'
+					value='system-theme'
+					id='system-theme'
 					selected
 					>System</option
 				>
 				<option
-					value='light'
-					id='light'
+					value='light-theme'
+					id='light-theme'
 					>Light</option
 				>
 				<option
-					value='dark'
-					id='dark'
+					value='dark-theme'
+					id='dark-theme'
 					>Dark</option
 				>
 			</select>
@@ -45,33 +45,24 @@ import '../styles/global.css';
 		<script is:inline>
 			function applyLocalStorageTheme() {
 				const localStorageTheme = localStorage?.getItem('theme') ?? '';
-				localStorageTheme === 'system'
+				localStorageTheme === 'light-theme'
 					? (document.querySelector('#theme-select').selectedIndex =
-							0)
-					: localStorageTheme === 'light'
+							1)
+					: localStorageTheme === 'dark-theme'
 						? (document.querySelector(
 								'#theme-select'
-							).selectedIndex = 1)
-						: localStorageTheme === 'dark'
-							? (document.querySelector(
-									'#theme-select'
-								).selectedIndex = 2)
-							: null;
+							).selectedIndex = 2)
+						: (document.querySelector(
+								'#theme-select'
+							).selectedIndex = 0);
 			}
-
 			applyLocalStorageTheme();
 
 			function setLocalStorageTheme() {
-				console.log();
-
 				const localTheme =
 					document.querySelector('#theme-select').value;
 				localStorage.setItem('theme', localTheme);
 			}
-			// Check if localstorage has theme data
-			// If yes, add to the page by adding attribute `selected` to the relevant option.
-			// If no, use default.
-			// Through all of the above, listen for selection change. On change, set localstorage theme data.
 		</script>
 	</body>
 </html>
