@@ -22,23 +22,47 @@ import '../styles/global.css';
 			<select
 				name='theme'
 				id='theme-select'
+				onchange='setLocalStorageTheme()'
 			>
 				<option
-					value='theme-system'
-					id='theme-system'
+					value='system-theme'
+					id='system-theme'
+					selected
 					>System</option
 				>
 				<option
-					value='theme-light'
-					id='theme-light'
+					value='light-theme'
+					id='light-theme'
 					>Light</option
 				>
 				<option
-					value='theme-dark'
-					id='theme-dark'
+					value='dark-theme'
+					id='dark-theme'
 					>Dark</option
 				>
 			</select>
 		</p>
+		<script is:inline>
+			function applyLocalStorageTheme() {
+				const localStorageTheme = localStorage?.getItem('theme') ?? '';
+				localStorageTheme === 'light-theme'
+					? (document.querySelector('#theme-select').selectedIndex =
+							1)
+					: localStorageTheme === 'dark-theme'
+						? (document.querySelector(
+								'#theme-select'
+							).selectedIndex = 2)
+						: (document.querySelector(
+								'#theme-select'
+							).selectedIndex = 0);
+			}
+			applyLocalStorageTheme();
+
+			function setLocalStorageTheme() {
+				const localTheme =
+					document.querySelector('#theme-select').value;
+				localStorage.setItem('theme', localTheme);
+			}
+		</script>
 	</body>
 </html>
